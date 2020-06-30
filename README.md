@@ -2,6 +2,7 @@
 Installation guide Oracle Database
 
 ## Pre-requisites
+* [Proceed to checkout and get content to Oracle Database Image](https://hub.docker.com/_/oracle-database-enterprise-edition)
 * Docker version: 19.03.8
 * Network created with Docker: ```docker network create --subnet 172.168.0.1/24 --gateway 172.168.0.2 -d bridge yhoyos-network```
 
@@ -9,6 +10,7 @@ Installation guide Oracle Database
 To install Oracle Database, execute it using docker: 
 
 ```
+$ docker login
 $ docker run -d -p 8080:8080 -p 1521:1521 --name hiberusDB --network yhoyos-network --ip 172.168.0.20 store/oracle/database-enterprise:12.2.0.1-slim
 ```
 You must wait for the container to go up, that is known by running `docker ps` and observing that the state of the container is in `healthy`
